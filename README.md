@@ -75,3 +75,25 @@ A default VPC is created once per region when an AWS account is first created. T
 **Default VPC:** If anything needs to communicate with a VPC and assuming that is allowed, it needs to communicate to that VPC CIDR, and outgoing connections will initially originate from somewhere in that VPC CIDR. `CIDR: 172.31.0.0/16`.
 
 Each subnet inside of VPC is located in one AZ. Each subnet use part of the VPCs range of IP address, its CIDR range. /20 Subnet in each AZ in the region. It came with a Internet Gateway, a default VPC security group and network ACL or NACL. Subnets assign a public IPv4 address.
+
+### EC2
+
+It allows you to provision virtual machines known as instances with resources you select and an operating system of your choosing. 
+
+Is a IaaS service, provides access to VMs known as EC2 instance. Private service, run in the Private AWS Zone. The instance is configured to lunch into a single VPC Subnet. You can configure the public access, VPC must to be public too. 
+
+- AZ Resilient - Instance fails if AZ fails
+- Different instance sizes and capabilities
+- AWS handle the virtualization, physical hardware, networking, storage and facilities.
+- On-Demand Billing - Per Second
+- Local on-host storage or Elastic Block Store (EBS)
+
+There are a few states that an instance can be in:
+- Running - Pay for the 4 things
+- Stopped - Only pay for storage
+- Terminated - Not pay
+
+**AMI:** is an image of an EC2 instance, can be used to create an EC2 instance or an AMI can be created from a EC2 instance. It contains attached permissions, boot volume of the instance and block device mapping (links the volume).
+
+You can connect to the EC2 with SSH Key Pair or Remote Desktop. If you use Key Pair, you need to download the Private Key and use it to connect via ssh `ssh -i "PrivateKey.pem user@dnsinstance`
+
