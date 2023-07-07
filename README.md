@@ -66,7 +66,7 @@ AWS have created a [global public cloud platform](https://aws.amazon.com/es/abou
 - Region Resilient: Service which operate in a single region with one set of data per region. Replicate data in different AZs.
 - AZ Resilient: Service that run form a single AZ, if the AZ fails then the service will fail.
 
-### Virtual Private Cloud
+### Virtual Private Cloud - VPC
 
 VPC is the service that you will use to create private networks inside AWS. Other private services will run from. You create within a specific region. VPCs are region resilient, operate from multiple AZ in a specific AWS Region. VPCs are private and isolated unless you decide otherwise.
 
@@ -76,7 +76,7 @@ A default VPC is created once per region when an AWS account is first created. T
 
 Each subnet inside of VPC is located in one AZ. Each subnet use part of the VPCs range of IP address, its CIDR range. /20 Subnet in each AZ in the region. It came with a Internet Gateway, a default VPC security group and network ACL or NACL. Subnets assign a public IPv4 address.
 
-### EC2
+### Elastic Compute Cloud - EC2
 
 It allows you to provision virtual machines known as instances with resources you select and an operating system of your choosing. 
 
@@ -97,3 +97,19 @@ There are a few states that an instance can be in:
 
 You can connect to the EC2 with SSH Key Pair or Remote Desktop. If you use Key Pair, you need to download the Private Key and use it to connect via ssh `ssh -i "PrivateKey.pem user@dnsinstance`
 
+### Simple Storage Service - S3
+
+It provides a near infinitely scalable object storage platform, storing each file as an entity called an object. It charges only for what is used.
+
+Accessible from anywhere (Global) with a public internet connection. It tends to be the default storage location for data ingestion and output for many AWS services.
+
+**Objects** (or files) are stored in folders called buckets. These buckets can be public or private. Files sizes go from Zero bytes to 5TB. Objects has Version ID, Metadata, Access Control and Subresources.
+
+**Buckets** are created in a specific AWS Region, data that is inside the bucket has a primary home region and never leaves that region, unless you configure it. Bucket is identified by his name and need to be globally unique. Flat structure, all objects stored within the bucket at the same level, there is no file system.
+
+S3 Patterns and Anti-Patterns
+- S3 is an object store (Audio, Image, etc) - not file or block
+- You can't mount a S3 Bucket - You can use EBS
+- Great for large scale data storage, distribution or upload
+- Great for offload
+- Input and/or Outputs to many AWS products
