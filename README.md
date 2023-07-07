@@ -45,3 +45,33 @@ Access keys are how the AWS Command Line Tools (CLI Tools) interact with AWS acc
 
 - Access Key ID
 - Secret Access Key
+
+## AWS Fundamentals
+
+### Public vs Private Services
+
+A public service is something that is accesible using public endpoints (S3). A private service is something which runs within a VPC, so only things within that VPC can access the service. Anyways, there are permissions, so you can access VPCs only if configured and connect from VPC to internet via IGW (Internet GateWay).
+
+### AWS Global Infrastructure
+
+AWS have created a [global public cloud platform](https://aws.amazon.com/es/about-aws/global-infrastructure/regions_az/) which consists of isolated 'regions' connected together by high speed global networking.
+
+- AWS Regions: Area of the world that they have selected and inside this region is a full deployment of AWS Infrastructure. Regions are geographically spread, this means that we can use theses regions to design system which can withstand global level disasters.
+- AWS Edge Locations: Smaller than regions, generally only have content distribution services, as well as some types of edge computing. Really useful to allow for fast efficient data transfer (cache).
+- AWS Availability Zone: AWS Regions are divided into multiple AZs (One or more data centers), which are isolated data centers with their own power, networking, and cooling infrastructure. Deploying resources across multiple AZs within a region ensures redundancy and fault tolerance, as failures in one AZ do not affect others.
+
+**Resilience:** Ability of a system or application to withstand and recover from failures, disruptions, or unexpected events while maintaining its functionality and providing reliable services.
+
+- Globally Resilient: Service operates globally with a single database and its data is replicated across multiple regions inside AWS. Region can fail and the service continues running (IAM, Route53).
+- Region Resilient: Service which operate in a single region with one set of data per region. Replicate data in different AZs.
+- AZ Resilient: Service that run form a single AZ, if the AZ fails then the service will fail.
+
+### Virtual Private Cloud
+
+VPC is the service that you will use to create private networks inside AWS. Other private services will run from. You create within a specific region. VPCs are region resilient, operate from multiple AZ in a specific AWS Region. VPCs are private and isolated unless you decide otherwise.
+
+A default VPC is created once per region when an AWS account is first created. There can be only one per region and can have many custom VPC per region.
+
+**Default VPC:** If anything needs to communicate with a VPC and assuming that is allowed, it needs to communicate to that VPC CIDR, and outgoing connections will initially originate from somewhere in that VPC CIDR. `CIDR: 172.31.0.0/16`.
+
+Each subnet inside of VPC is located in one AZ. Each subnet use part of the VPCs range of IP address, its CIDR range. /20 Subnet in each AZ in the region. It came with a Internet Gateway, a default VPC security group and network ACL or NACL. Subnets assign a public IPv4 address.
