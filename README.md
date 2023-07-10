@@ -149,3 +149,5 @@ For external metrics or logs, you need to install the CloudWatch Agent.
 **Metric:** Collection of related data points in a time ordered structure.
 **Datapoint:** A specific measurement captured by a monitored service or resource. Consist in a Timestamp and a value.
 **Dimension:** Name values pairs to separate things. It separate datapoints for different things or perspectives within the same metric.
+
+CloudWatch also allows us to take action based on metrics. **Alarms** are created and linked to a specific metric. You can set a criteria, so when the status is not in a good state, you can define an action.
