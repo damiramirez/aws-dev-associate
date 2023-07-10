@@ -151,3 +151,21 @@ For external metrics or logs, you need to install the CloudWatch Agent.
 **Dimension:** Name values pairs to separate things. It separate datapoints for different things or perspectives within the same metric.
 
 CloudWatch also allows us to take action based on metrics. **Alarms** are created and linked to a specific metric. You can set a criteria, so when the status is not in a good state, you can define an action.
+
+### Shared Responsibility Model
+
+The Shared Responsibility Model - is how AWS provide clarity around which areas of systems security are theirs, and which are owned by the customer.
+
+AWS is responsible for the security **of** the cloud
+- Protecting the infrastructure, physical data centers, and the global network that AWS operates. Regions, AZ and Edge Location.
+- AWS manages the security and compliance of the underlying infrastructure, such as the servers, storage, and networking components.
+- AWS provides a secure foundation with built-in security features and services, including identity and access management, network security, encryption, and compliance certifications.
+- AWS regularly updates and patches the infrastructure and services to protect against known vulnerabilities and threats.
+
+Customers are responsible for security **in** the cloud, 
+- Securing their applications, data, and operating systems running on AWS services.
+- Customers are responsible for implementing appropriate access controls, managing user identities, and defining permissions and roles for their AWS resources.
+- Customers must configure and manage their own operating systems, applications, and network settings to ensure security.
+- Customers are responsible for protecting their data, implementing encryption, and managing backups and disaster recovery.
+
+![Shared Responsibility Model](./assets/SharedResponsabilityModel.png)
