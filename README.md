@@ -47,6 +47,7 @@ Access keys are how the AWS Command Line Tools (CLI Tools) interact with AWS acc
 - Secret Access Key
 
 ## AWS Fundamentals
+*Introduction to AWS*
 
 ### Public vs Private Services
 
@@ -114,7 +115,7 @@ S3 Patterns and Anti-Patterns
 - Great for offload
 - Input and/or Outputs to many AWS products
 
-### CloudFormation
+### CloudFormation - CFN
 
 CloudFormation is an Infrastructure as Code (IaC) product in AWS which allows automation infrastructure creation, update and deletion.
 
@@ -132,3 +133,19 @@ Components of a template:
 - Outputs
 
 When you upload a template, it will be save on a S3 bucket.
+
+### CloudWatch - CW
+
+CloudWatch is a core supporting service within AWS which provides metric, log and event management services. It's used through other AWS services for health and performance monitoring, log management and nerveless architectures.
+
+- Collects and manages operational data
+  - Metrics - AWS Products, Apps, on-premises
+  - CloudWatch Logs - Aws Products, Apps, on-premises
+  - CloudWatch Events - AWS Services and Schedules
+
+For external metrics or logs, you need to install the CloudWatch Agent.
+
+**Namespace:** Is a container for metrics. It provides a way to organize and categorize related metrics within CloudWatch.
+**Metric:** Collection of related data points in a time ordered structure.
+**Datapoint:** A specific measurement captured by a monitored service or resource. Consist in a Timestamp and a value.
+**Dimension:** Name values pairs to separate things. It separate datapoints for different things or perspectives within the same metric.
