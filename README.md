@@ -113,3 +113,22 @@ S3 Patterns and Anti-Patterns
 - Great for large scale data storage, distribution or upload
 - Great for offload
 - Input and/or Outputs to many AWS products
+
+### CloudFormation
+
+CloudFormation is an Infrastructure as Code (IaC) product in AWS which allows automation infrastructure creation, update and deletion.
+
+Templates created in YAML or JSON can be used to automate infrastructure operations. Templates are used to create stacks, which are used to interact with resources in an AWS account.
+
+Components of a template:
+
+- List of resources - mandatory
+- Template Format Version
+- Description - must go after template format version
+- Metadata
+- Parameters - configuration of resources
+- Mappings - key/value pairs which can be used for lookups
+- Conditions
+- Outputs
+
+When you upload a template, it will be save on a S3 bucket.
