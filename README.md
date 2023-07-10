@@ -169,3 +169,11 @@ Customers are responsible for security **in** the cloud,
 - Customers are responsible for protecting their data, implementing encryption, and managing backups and disaster recovery.
 
 ![Shared Responsibility Model](./assets/SharedResponsabilityModel.png)
+
+### High Availability vs Fault Tolerance vs Disaster Recovery
+
+**High Availability:** Ensure an agreed level of operational performance, usually uptime, for a higher than normal period. Minimizes downtime and ensures the continuous availability of services. HA architectures typically involve redundant hardware, load balancing, and automatic failover mechanisms to ensure service continuity.
+
+**Fault Tolerance:** Property that enables a system to continue operating properly in the event of the failure of some of its components. FT systems are designed to detect and recover from failures without disrupting ongoing operations. This is typically achieved through redundant components, where backup systems or resources are available to seamlessly take over in case of failure. The goal is to eliminate single points of failure and maintain service availability without interruption.
+
+**Disaster Recovery:** Set of policies, tools and procedures to enable the recovery or continuation of vital technology infrastructure and systems following a natural or human-induced disaster. Designed to keep the crucial and non replaceable parts of your system safe. DR plans typically involve creating backups, replicating data to off-site locations, and establishing procedures to restore operations and minimize downtime. The focus is on recovering systems and data to a functional state after a significant disruption.
