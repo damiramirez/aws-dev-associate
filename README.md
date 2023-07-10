@@ -177,3 +177,36 @@ Customers are responsible for security **in** the cloud,
 **Fault Tolerance:** Property that enables a system to continue operating properly in the event of the failure of some of its components. FT systems are designed to detect and recover from failures without disrupting ongoing operations. This is typically achieved through redundant components, where backup systems or resources are available to seamlessly take over in case of failure. The goal is to eliminate single points of failure and maintain service availability without interruption.
 
 **Disaster Recovery:** Set of policies, tools and procedures to enable the recovery or continuation of vital technology infrastructure and systems following a natural or human-induced disaster. Designed to keep the crucial and non replaceable parts of your system safe. DR plans typically involve creating backups, replicating data to off-site locations, and establishing procedures to restore operations and minimize downtime. The focus is on recovering systems and data to a functional state after a significant disruption.
+
+- HA - Minimize any outage
+- FT - Operate through faults
+- DR - Used when these don't work
+
+### Route53 - R53
+
+It allows users to manage the domain names and the routing of internet traffic to various resources, such as AWS services, EC2 instances, S3 buckets, load balancers, and other endpoints. Is a global service with a single database, you don't need to pick up a Region. Globally Resilient.
+
+DNS is a collection of rules and records which helps clients understand how to reach a server through URLs.
+
+In AWS, the most common records are (will be on exam):
+
+- A: URL to IPv4
+- AAAA: URL to IPv6
+- CNAME: URL to URL
+- ALIAS: URL to AWS resource
+
+Route 53 can use:
+
+- Public domain names you own
+- Private domain names that can be resolved by your instances in your VPCs
+
+Route53 has advanced features such as:
+
+- Load balancing (through DNS - also called client load balancing)
+- Health checks (although limited…)
+- Routing policy: simple, failover, geolocation, geoproximity, latency, weighted
+
+Prefer Alias over CNAME for AWS resources (for performance reasons)
+
+## IAM, Accounts and AWS Organizations
+
